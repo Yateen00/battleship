@@ -19,12 +19,12 @@ describe("Game", () => {
     let tile = game.opponentBoard
       .flat()
       .find((tile) => !tile.ship && !tile.hit);
-    let position = [tile.x, tile.y];
+    let position = [tile.y, tile.x];
     expect(game.currentPlayer).toBe(game.player1);
     expect(game.attack(position)).toBe(false);
     expect(game.currentPlayer).toBe(game.player2);
     tile = game.opponentBoard.flat().find((tile) => !tile.ship && !tile.hit);
-    position = [tile.x, tile.y];
+    position = [tile.y, tile.x];
     expect(game.attack(position)).toBe(false);
     expect(game.currentPlayer).toBe(game.player1);
   });
@@ -33,7 +33,7 @@ describe("Game", () => {
     const tile = game.opponentBoard
       .flat()
       .find((tile) => tile.ship && !tile.hit);
-    const position = [tile.x, tile.y];
+    const position = [tile.y, tile.x];
     expect(game.currentPlayer).toBe(game.player1);
     expect(game.attack(position)).toBe(true);
     expect(game.currentPlayer).toBe(game.player1); // Player 1 should play again

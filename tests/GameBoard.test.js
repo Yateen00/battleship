@@ -28,6 +28,10 @@ describe("GameBoard", () => {
       gameBoard.placeShip(2, [7, 8], "horizontal");
       expect(gameBoard[7][8].ship).not.toBeNull();
       expect(gameBoard[7][9].ship).not.toBeNull();
+      expect(gameBoard[7][8].x).toBe(8);
+      expect(gameBoard[7][8].y).toBe(7);
+      expect(gameBoard[7][9].x).toBe(8);
+      expect(gameBoard[7][9].y).toBe(7);
       expect(gameBoard.totalAvailableShips).toBe(1);
     });
 
